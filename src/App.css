@@ -1,0 +1,13 @@
+.app {
+  text-align: center;
+}
+
+.app .pokemon-list {
+  float: left;
+  width: 50%;
+}
+
+.app .pokemon-detail {
+  float: right;
+  width: 50%;
+}

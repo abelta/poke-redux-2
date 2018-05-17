@@ -1,0 +1,17 @@
+.pokemon-list-item {
+  border: none;
+  color: brown;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: cornsilk;
+  width: 100%;
+  text-decoration: none;
+}
+
+.pokemon-list-item:hover {
+  background-color: beige;
+}
