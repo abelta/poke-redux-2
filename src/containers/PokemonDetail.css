@@ -1,0 +1,12 @@
+.pokemon-detail {
+  
+}
+
+.pokemon-detail ul {
+  margin: 0;
+  padding: 0;
+}
+
+.pokemon-detail li {
+  list-style: none;
+}

@@ -1,9 +1,15 @@
 {
+  "env": {
+    "browser": true,
+  },
   "extends": [
     "airbnb"
   ],
   "rules": {
+    "import/prefer-default-export": "off",
     "react/jsx-filename-extension": "off",
-    "react/forbid-prop-types": "off"
+    "react/forbid-prop-types": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
   }
 }

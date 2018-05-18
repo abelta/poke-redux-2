@@ -1,12 +1,21 @@
 import React from 'react';
-import { PokemonDetail, PokemonList } from './components';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { PokemonDetail, PokemonList } from './containers';
+import reducer from './reducers';
+import saga from './sagas';
 import './App.css';
 
-const mockPokemonList = [
-  { name: 'Bulbasaur', url: 'bulbasaur.com' },
-  { name: 'Charmander', url: 'charmander.com' },
-  { name: 'Squirtle', url: 'squirtle.com' },
-];
+const sagaMiddleware = createSagaMiddleware();
+const composeEnhancers = composeWithDevTools({ realtime: true });
+const store = createStore(
+  reducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware)),
+);
+
+sagaMiddleware.run(saga);
 
 const mockPokemon = {
   name: 'Bulbasaur',
@@ -14,10 +23,12 @@ const mockPokemon = {
 
 
 const App = () => (
-  <div className="app">
-    <PokemonList pokemon={mockPokemonList} />
-    <PokemonDetail pokemon={mockPokemon} />
-  </div>
+  <Provider store={store}>
+    <div className="app">
+      <PokemonList />
+      <PokemonDetail pokemon={mockPokemon} />
+    </div>
+  </Provider>
 );
 
 export default App;

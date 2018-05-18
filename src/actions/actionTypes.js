@@ -1,0 +1,9 @@
+export const POKEMON_SELECTED = 'Pokemon/SELECTED';
+
+export const POKEMON_INDEX_REQUESTED = 'Pokemon/INDEX_REQUESTED';
+export const POKEMON_INDEX_FAILED = 'Pokemon/INDEX_FAILED';
+export const POKEMON_INDEX_SUCCEEDED = 'Pokemon/INDEX_SUCCEEDED';
+
+export const POKEMON_GET_REQUESTED = 'Pokemon/GET_REQUESTED';
+export const POKEMON_GET_FAILED = 'Pokemon/GET_FAILED';
+export const POKEMON_GET_SUCCEEDED = 'Pokemon/GET_SUCCEEDED';
